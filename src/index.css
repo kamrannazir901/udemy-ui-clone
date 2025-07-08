@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "./assets/fonts/fonts.css";
+
+@theme {
+  --color-purple: #6d28d2;
+  --color-lightPurpleText: #c0c4fc;
+  --color-purpleHover: #892de1;
+
+  --color-lightpurpleHover: #ede5fa;
+  --color-headBlack: #2a2b3f; /*heading*/
+
+  --color-blacktext: #3c3d4f;
+
+  --color-lightBlack: #595c73; /*text*/
+
+  --color-bgGray: #f6f7f9;
+
+  --font-udemy: "UdemySans", sans-serif;
+  --font-atlassian: "AtlassianSans", sans-serif;
+  --font-suisse: "SuisseWorks", serif;
+}
+button,
+a,
+.link {
+  @apply cursor-pointer;
+}
+
+.custom-bullet {
+  @apply !w-[20%] !h-2 !opacity-100 !bg-[#d1d2e0] !rounded-[100px] !mx-1 relative overflow-hidden;
+}
+
+.custom-bullet.swiper-pagination-bullet-active::before {
+  content: "";
+  @apply absolute inset-0 h-full bg-purple;
+  animation: fillProgress 4s linear forwards;
+}
+
+.custom-bullet.filled {
+  @apply !bg-purple;
+}
+
+@keyframes fillProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.is-dragging {
+  border: 2px solid;
+}
+
+.container {
+  @apply max-w-[1400px] w-[100%] mx-auto;
+}
+
+.small-container {
+  @apply max-w-[1200px] px-6 w-[100%] mx-auto;
+}
+
+.container-pad {
+  @apply max-w-[1400px] w-[100%] mx-auto px-6;
+}
+
+.spaceTop {
+  @apply mt-10 md:mt-15;
+}
+
+.pad {
+  @apply px-3 md:px-8;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  @apply font-udemy;
+}
+
+.h1 {
+  font-size: clamp(1.2rem, 5vw, 32px);
+  @apply font-suisse leading-tight;
+}
+
+.h2 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  @apply font-semibold leading-tight;
+}
+
+.h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  @apply font-medium leading-normal text-gray-700;
+}
