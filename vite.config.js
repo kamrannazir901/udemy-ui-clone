@@ -5,7 +5,7 @@ import path from "path";
 import { ghPages } from "vite-plugin-gh-pages";
 
 export default defineConfig({
-  base: "/udemy-ui-clone/",
+  base: "/",
   plugins: [react(), tailwindcss(), ghPages()],
   resolve: {
     alias: {
